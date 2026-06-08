@@ -1,4 +1,4 @@
-# Event Calendar
+# Календарь событий
 
 [![Actions Status](https://github.com/buravlev-arthur/ai-for-developers-project-387/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/buravlev-arthur/ai-for-developers-project-387/actions)
 
