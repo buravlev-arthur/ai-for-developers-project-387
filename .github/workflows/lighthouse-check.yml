@@ -45,7 +45,15 @@ jobs:
           OPENCODE_API_KEY: ${{ secrets.OPENCODE_API_KEY }}
         with:
           model: opencode/deepseek-v4-flash-free
-          prompt: Выполни аудит приложения с помощью Lighthouse.
-            Lighthouse CLI уже установлен и конфигурационный файл .lighthouserc.json создан находится в корне проекта.
-            Выполни команду lhci collect для запуска аудита и сохрани результаты в папке .lighthouseci/ с помощью actions/upload-artifact@v4.
-            Загрузи отчеты в виде артефакта GitHub Actions. Укажи имя артефакта как "lighthouse-reports" и установи срок хранения на 7 дней.
+          prompt: >
+            Запусти аудит приложения с помощью Lighthouse CI.
+            Конфигурационный файл .lighthouserc.js находится в корне проекта.
+            Выполни команду `lhci collect` для запуска аудита.
+            Результаты сохранятся в папку .lighthouseci/ — их заберёт следующий шаг workflow.
+
+      - name: Upload Lighthouse reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse-reports
+          path: .lighthouseci/
+          retention-days: 7
