@@ -8,7 +8,7 @@ RUN npm ci
 
 COPY . .
 RUN npm run client:build
-RUN npx tsc -p backend/tsconfig.json
+RUN npm run server:build
 
 FROM node:22-alpine
 WORKDIR /app

@@ -16,6 +16,7 @@
     "client:lint:fix": "npm run lint:fix -w client",
     "client:format": "npm run format -w client",
     "server:start": "npm start -w backend",
+    "server:build": "tsc -p backend/tsconfig.json",
     "server:lint": "npm run lint -w backend",
     "server:lint:fix": "npm run lint:fix -w backend",
     "server:format": "npm run format -w backend",
