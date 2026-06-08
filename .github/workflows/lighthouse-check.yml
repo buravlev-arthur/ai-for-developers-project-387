@@ -47,9 +47,9 @@ jobs:
           model: opencode/deepseek-v4-flash-free
           prompt: >
             Запусти аудит приложения с помощью Lighthouse CI.
-            Конфигурационный файл .lighthouserc.js находится в корне проекта.
+            Конфигурационный файл lighthouserc.js находится в корне проекта.
             Выполни команду `lhci collect` для запуска аудита.
-            Результаты сохранятся в папку .lighthouseci/ — их заберёт следующий шаг workflow.
+            Результаты сохрани в папку .lighthouseci/, создай ветку и замерж изменения в с файлами отчёта в main-ветку, их заберёт следующий шаг workflow.
 
       - name: Upload Lighthouse reports
         uses: actions/upload-artifact@v4
