@@ -1,0 +1,40 @@
+{
+  "name": "event-calendar",
+  "version": "1.0.0",
+  "description": "Event Calendar project",
+  "private": true,
+  "workspaces": [
+    "client",
+    "backend"
+  ],
+  "scripts": {
+    "compile": "tsp compile api/main.tsp --emit @typespec/openapi3",
+    "watch": "tsp compile api/main.tsp --watch",
+    "client:dev": "npm run dev -w client",
+    "client:build": "npm run build -w client",
+    "client:lint": "npm run lint -w client",
+    "client:lint:fix": "npm run lint:fix -w client",
+    "client:format": "npm run format -w client",
+    "server:start": "npm start -w backend",
+    "server:lint": "npm run lint -w backend",
+    "server:lint:fix": "npm run lint:fix -w backend",
+    "server:format": "npm run format -w backend",
+    "install:all": "npm ci",
+    "dev": "concurrently \"npm run client:dev\" \"npm run server:start\"",
+    "test:e2e": "playwright test",
+    "test:e2e:debug": "playwright test --debug",
+    "test:e2e:ui": "playwright test --ui",
+    "docker:build": "docker build -t event-calendar .",
+    "docker:start": "docker run -e PORT=5145 -p 8080:5145 event-calendar"
+  },
+  "dependencies": {
+    "@typespec/compiler": "^1.11.0",
+    "@typespec/http": "^1.11.0",
+    "@typespec/openapi3": "^1.11.0",
+    "@typespec/rest": "^0.81.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.60.0",
+    "concurrently": "^9.2.1"
+  }
+}

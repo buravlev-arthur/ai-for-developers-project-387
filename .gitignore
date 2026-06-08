@@ -1,0 +1,5 @@
+node_modules
+test-results
+client/dist
+
+tsconfig.tsbuildinfo

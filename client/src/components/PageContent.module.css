@@ -1,0 +1,7 @@
+.container {
+  height: calc(80vh - 64px);
+  padding-top: 24px;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+}

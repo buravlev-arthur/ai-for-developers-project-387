@@ -1,0 +1,9 @@
+.eventTypeCard {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.fullWidth {
+  width: 100%;
+}

@@ -1,0 +1,16 @@
+.layout {
+  min-height: 100vh;
+}
+
+.layoutHome {
+  background: linear-gradient(135deg, #e8f4fd 0%, #f0e6ff 50%, #e6f7ff 100%);
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+}
+
+.contentWrapper {
+  width: 80vw;
+}

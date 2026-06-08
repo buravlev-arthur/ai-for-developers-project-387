@@ -1,0 +1,17 @@
+:root {
+  --color-primary: #1890ff;
+  --color-primary-bg: #e6f4ff;
+  --color-primary-border: #91caff;
+  --color-text-secondary: #8c8c8c;
+  --color-text-tertiary: #bfbfbf;
+  --color-bg-card: #fafafa;
+  --color-border: #f0f0f0;
+  --color-border-card: #e8e8e8;
+  --color-white: #fff;
+  --color-success: #52c41a;
+  --font-size-sm: 13px;
+  --font-size-base: 14px;
+  --font-size-lg: 16px;
+  --font-size-xl: 18px;
+  --font-size-heading: 48px;
+}

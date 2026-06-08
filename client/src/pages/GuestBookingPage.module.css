@@ -1,0 +1,243 @@
+.bookingCard {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.mainRow {
+  display: flex;
+  gap: 0;
+  height: 100%;
+}
+
+/* LEFT COLUMN */
+.leftColumn {
+  width: 30%;
+  padding-right: 24px;
+  border-right: 1px solid #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  min-height: 0;
+}
+
+.avatarSection {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.ownerName {
+  margin-top: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.sectionLabel {
+  font-weight: 500;
+  margin-bottom: 12px;
+  color: #8c8c8c;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.scrollArea {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.eventTypeItem.eventTypeItem {
+  cursor: pointer;
+  padding: 10px 12px;
+  border-radius: 6px;
+  margin-bottom: 4px;
+  transition: all 0.15s;
+  background: #fafafa;
+  border: 1px solid #e8e8e8;
+  border-block: 1px solid #e8e8e8;
+  border-inline: 1px solid #e8e8e8;
+}
+
+.eventTypeItemSelected.eventTypeItemSelected {
+  background: #e6f4ff;
+  border-color: #91caff;
+  border-block-color: #91caff;
+  border-inline-color: #91caff;
+}
+
+.eventTypeName {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.eventTypeDesc {
+  font-size: 12px;
+  color: #8c8c8c;
+}
+
+.eventTypeDescEmpty {
+  font-size: 12px;
+  color: #bfbfbf;
+}
+
+/* CENTER COLUMN */
+.centerColumn {
+  width: 40%;
+  padding: 0 24px;
+  border-right: 1px solid #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-shrink: 0;
+}
+
+.calendarHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0 8px;
+}
+
+.calendarMonth {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+/* RIGHT COLUMN */
+.rightColumn {
+  width: 30%;
+  padding-left: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  min-width: 0;
+  min-height: 0;
+}
+
+.centeredMessage {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #bfbfbf;
+}
+
+.centeredMessageSecondary {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #8c8c8c;
+}
+
+.centeredSpinner {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slotList {
+  flex: 1;
+  overflow-y: auto;
+  margin-bottom: 16px;
+}
+
+.slotItem.slotItem {
+  padding: 10px 12px;
+  border-radius: 6px;
+  margin-bottom: 4px;
+  transition: all 0.15s;
+  border: 1px solid transparent;
+  border-block: 1px solid transparent;
+  border-inline: 1px solid transparent;
+}
+
+.slotItemAvailable.slotItemAvailable {
+  cursor: pointer;
+  opacity: 1;
+}
+
+.slotItemUnavailable.slotItemUnavailable {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.slotItemSelected.slotItemSelected {
+  background: #e6f4ff;
+  border-color: #91caff;
+  border-block-color: #91caff;
+  border-inline-color: #91caff;
+}
+
+.slotRow {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+
+.slotTime {
+  font-weight: 500;
+}
+
+.continueButton {
+  width: 100%;
+}
+
+/* SUCCESS STATE */
+.successWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 520px;
+}
+
+.successCard {
+  max-width: 480px;
+  width: 100%;
+}
+
+.successResult {
+  padding-bottom: 0 !important;
+}
+
+.successContent {
+  padding: 0 24px 24px;
+}
+
+.detailRow {
+  margin-bottom: 12px;
+}
+
+.detailLabel {
+  font-weight: 600;
+  color: #8c8c8c;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.detailValue {
+  font-size: 16px;
+}
+
+.printButtonRow {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* ERROR STATE */
+.errorCard {
+  width: 100%;
+}
+
+.errorWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 520px;
+}

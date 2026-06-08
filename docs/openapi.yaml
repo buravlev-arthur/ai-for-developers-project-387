@@ -1,0 +1,247 @@
+openapi: 3.0.0
+info:
+  title: Event Calendar API
+  version: 0.0.0
+tags: []
+paths:
+  /api/appointments:
+    post:
+      operationId: createAppointment
+      parameters: []
+      responses:
+        '200':
+          description: The request has succeeded.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Appointment'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateAppointmentRequest'
+    get:
+      operationId: OwnerService_listAppointments
+      parameters: []
+      responses:
+        '200':
+          description: The request has succeeded.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Appointment'
+  /api/event-types:
+    post:
+      operationId: OwnerService_createEventType
+      parameters: []
+      responses:
+        '200':
+          description: The request has succeeded.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EventType'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                description:
+                  type: string
+                  nullable: true
+                durationMinutes:
+                  type: integer
+                  format: int32
+              required:
+                - name
+                - durationMinutes
+    get:
+      operationId: OwnerService_listEventTypes
+      parameters: []
+      responses:
+        '200':
+          description: The request has succeeded.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/EventType'
+  /api/owner:
+    get:
+      operationId: OwnerService_getOwner
+      parameters: []
+      responses:
+        '200':
+          description: The request has succeeded.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Owner'
+  /api/slots:
+    get:
+      operationId: listSlots
+      parameters:
+        - name: eventTypeId
+          in: query
+          required: true
+          schema:
+            type: string
+          explode: false
+        - name: date
+          in: query
+          required: true
+          schema:
+            type: string
+            format: date-time
+          explode: false
+      responses:
+        '200':
+          description: The request has succeeded.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Slot'
+components:
+  schemas:
+    Appointment:
+      type: object
+      required:
+        - id
+        - eventType
+        - timeSlot
+        - guest
+      properties:
+        id:
+          type: string
+        eventType:
+          $ref: '#/components/schemas/EventType'
+        timeSlot:
+          $ref: '#/components/schemas/TimeSlot'
+        guest:
+          $ref: '#/components/schemas/Guest'
+    CreateAppointmentRequest:
+      type: object
+      required:
+        - eventTypeId
+        - timeSlotId
+        - guest
+      properties:
+        eventTypeId:
+          type: string
+        timeSlotId:
+          type: string
+        guest:
+          $ref: '#/components/schemas/Guest'
+    DayOfWeek:
+      type: string
+      enum:
+        - Mon
+        - Tue
+        - Wed
+        - Thu
+        - Fri
+        - Sat
+        - Sun
+    EventType:
+      type: object
+      required:
+        - id
+        - name
+        - durationMinutes
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+          nullable: true
+        durationMinutes:
+          type: integer
+          format: int32
+    Guest:
+      type: object
+      required:
+        - email
+        - username
+      properties:
+        email:
+          type: string
+        username:
+          type: string
+        comment:
+          type: string
+          nullable: true
+    Owner:
+      type: object
+      required:
+        - id
+        - email
+        - username
+        - workTimeStart
+        - workTimeEnd
+        - workDays
+      properties:
+        id:
+          type: string
+        email:
+          type: string
+        username:
+          type: string
+        description:
+          type: string
+          nullable: true
+        workTimeStart:
+          $ref: '#/components/schemas/Time'
+        workTimeEnd:
+          $ref: '#/components/schemas/Time'
+        workDays:
+          type: array
+          items:
+            $ref: '#/components/schemas/DayOfWeek'
+    Slot:
+      type: object
+      required:
+        - id
+        - timeStart
+        - timeEnd
+        - isAvailable
+      properties:
+        id:
+          type: string
+        timeStart:
+          type: string
+          format: date-time
+        timeEnd:
+          type: string
+          format: date-time
+        isAvailable:
+          type: boolean
+    Time:
+      type: string
+      format: HH:mm
+    TimeSlot:
+      type: object
+      required:
+        - id
+        - timeStart
+        - timeEnd
+      properties:
+        id:
+          type: string
+        timeStart:
+          type: string
+          format: date-time
+        timeEnd:
+          type: string
+          format: date-time

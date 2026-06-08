@@ -1,0 +1,23 @@
+.title {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.subtitle {
+  font-size: 18px;
+  color: #595959;
+  max-width: 480px;
+  margin-bottom: 32px;
+}
+
+.featureCard {
+  border-radius: 12px;
+}
+
+.featureListItem {
+  border: none;
+}
+
+.checkIcon {
+  color: #52c41a;
+}

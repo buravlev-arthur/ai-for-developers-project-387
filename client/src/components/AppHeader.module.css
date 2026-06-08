@@ -1,0 +1,28 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logoLink {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.logoText {
+  color: #fff;
+  font-size: 18px;
+  line-height: 64px;
+}
+
+.navLink {
+  font-size: 14px;
+  color: #fff;
+}
+
+.navLinkActive {
+  color: #1890ff;
+  font-weight: 600;
+}
