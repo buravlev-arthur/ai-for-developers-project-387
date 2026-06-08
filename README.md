@@ -6,7 +6,7 @@
 
 ## Демо-стенд
 
-Приложение развёрнуто на Render: [event-calendar-5v7j.onrender.com](https://event-calendar-5v7j.onrender.com)
+Приложение развёрнуто на Render: [event-calendar-gh-workflows.onrender.com](https://event-calendar-gh-workflows.onrender.com)
 
 ## Архитектура
 
