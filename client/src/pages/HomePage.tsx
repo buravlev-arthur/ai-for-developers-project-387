@@ -20,7 +20,7 @@ export default function HomePage() {
       <Col xs={24} md={14} xl={16}>
         <Title className={styles.title}>Календарь Cal.me</Title>
         <Paragraph className={styles.subtitle}>
-          Выберите тип события и забронируйте встречу в пару шагов удобное время!!!
+          Выберите тип события и забронируйте встречу в пару шагов удобное время
         </Paragraph>
         <Button type="primary" size="large" onClick={() => navigate('/booking')}>
           Записаться <ArrowRightOutlined />
