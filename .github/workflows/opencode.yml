@@ -23,6 +23,11 @@ jobs:
         with:
           persist-credentials: false
 
+      - name: Create GitHub token for Render MCP
+        run: |
+          mkdir -p /home/runner/.config/opencode/.secrets
+          echo "${{ secrets.RENDER_MCP_TOKEN }}" > /home/runner/.config/opencode/.secrets/render-token
+
       - name: Run opencode
         uses: anomalyco/opencode/github@latest
         env:
