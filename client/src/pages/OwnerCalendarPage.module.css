@@ -10,6 +10,58 @@
   margin: 0;
 }
 
+.appointmentItem {
+  display: flex;
+  gap: 6px;
+  padding: 4px 0;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.appointmentItem:last-child {
+  border-bottom: none;
+}
+
+.appointmentTime {
+  flex-shrink: 0;
+  font-weight: 600;
+  color: #1677ff;
+  min-width: 40px;
+}
+
+.appointmentBody {
+  flex: 1;
+  min-width: 0;
+}
+
+.appointmentTitle {
+  font-weight: 600;
+  font-size: 13px;
+  color: #262626;
+}
+
+.appointmentGuest {
+  font-size: 13px;
+  color: #434343;
+}
+
+.appointmentEmail {
+  font-size: 11px;
+  color: #8c8c8c;
+  word-break: break-all;
+}
+
+.appointmentComment {
+  font-size: 12px;
+  color: #595959;
+  font-style: italic;
+  margin-top: 2px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .loadingSpin {
   display: block;
   margin-top: 80px;

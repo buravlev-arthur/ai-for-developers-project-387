@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Calendar, Badge, Card, Spin } from 'antd';
+import { Calendar, Card, Spin } from 'antd';
 import type { Dayjs } from 'dayjs';
 import { listAppointments } from '../api/endpoints';
 import type { Appointment } from '../api/types';
@@ -21,11 +21,16 @@ export default function OwnerCalendarPage() {
     return (
       <ul className={styles.appointmentList}>
         {dayAppointments.map((a) => (
-          <li key={a.id}>
-            <Badge
-              status="success"
-              text={`${a.timeSlot.timeStart.slice(11, 16)} — ${a.guest.username}`}
-            />
+          <li key={a.id} className={styles.appointmentItem}>
+            <div className={styles.appointmentTime}>{a.timeSlot.timeStart.slice(11, 16)}</div>
+            <div className={styles.appointmentBody}>
+              <div className={styles.appointmentTitle}>{a.eventType.name}</div>
+              <div className={styles.appointmentGuest}>{a.guest.username}</div>
+              {a.guest.email && <div className={styles.appointmentEmail}>{a.guest.email}</div>}
+              {a.guest.comment && (
+                <div className={styles.appointmentComment}>{a.guest.comment}</div>
+              )}
+            </div>
           </li>
         ))}
       </ul>
