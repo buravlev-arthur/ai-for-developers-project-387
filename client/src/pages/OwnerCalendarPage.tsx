@@ -27,6 +27,7 @@ export default function OwnerCalendarPage() {
               content={
                 <div>
                   <p><strong>Email:</strong> {a.guest.email}</p>
+                  <p><strong>Тип встречи:</strong> {a.eventType.name}</p>
                   <p><strong>Длительность:</strong> {a.eventType.durationMinutes} мин</p>
                   {a.guest.comment && <p><strong>Комментарий:</strong> {a.guest.comment}</p>}
                 </div>
