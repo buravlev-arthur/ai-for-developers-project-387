@@ -23,7 +23,7 @@ jobs:
           node-version: 20
 
       - name: Install dependencies
-        run: npm install:all
+        run: npm run install:all
 
       - name: Install Lighthouse CI
         run: npm install -g @lhci/cli@0.15.x
